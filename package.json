@@ -1,0 +1,19 @@
+{
+    "name": "starwars",
+    "version": "1.0.0",
+    "description": "Find people and ships of star wars movies",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "R0M3R0",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.3",
+        "mongoose": "^5.2.4",
+        "npm": "^6.2.0"
+    }
+}

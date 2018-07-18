@@ -1,0 +1,103 @@
+<div class="row" ng-controller="appCtrl">
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+        <h4 class="text-white"><i class="fas fa-user" aria-hidden="true"></i>Información de Star Wars</h4>
+        <hr/>
+    </div>
+
+    <div class="col-12 col-xs-12 offset-sm-4 col-sm-4 offset-md-4 col-md-4 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4">
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Tipo:</span>
+            </div>
+            <select class="form-control" ng-model="type">
+              <option ng-repeat="x in types" value="{{x.type}}">{{x.label}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-12 col-xs-12 offset-sm-4 col-sm-4 offset-md-4 col-md-4 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4">
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Nombre:</span>
+            </div>
+            <input class="form-control" type="text" ng-model="name">
+        </div>
+    </div>
+
+    <div class="col-12 col-xs-12 offset-sm-4 col-sm-4 offset-md-4 col-md-4 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4">
+        <button class="btn btn-info btn-sm btn-block" ng-click="Consult()">Buscar</button>
+    </div>
+
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+        <table class="table table-dark table-striped table-hover table-sm" id='people' style="display: none;">
+            <thead>
+                <tr class="text-center text-warning">
+                    <th>Nombre</th>
+                    <th>Altura</th>
+                    <th>Color ojos</th>
+                    <th>Color cabello</th>
+                    <th>Peso</th>
+                    <th>Genero</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" ng-repeat="data in names">
+                    <td>{{data.name}}</td>
+                    <td>{{data.height}} cm</td>
+                    <td>{{data.eye_color}}</td>
+                    <td>{{data.hair_color}}</td>
+                    <td>{{data.mass}} kg</td>
+                    <td>{{data.gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-dark table-striped table-hover table-sm" id='ships' style="display: none;">
+            <thead>
+                <tr class="text-center text-warning">
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>Fabricante</th>
+                    <th>Longitud</th>
+                    <th>Costo en creditos</th>
+                    <th>Hiperimpulso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" ng-repeat="data in ships">
+                    <td>{{data.name}}</td>
+                    <td>{{data.model}}</td>
+                    <td>{{data.manufacturer}}</td>
+                    <td>{{data.length}}</td>
+                    <td>{{data.cost_in_credits}}</td>
+                    <td>{{data.hyperdrive_rating}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-dark table-striped table-hover table-sm" id='species' style="display: none;">
+            <thead>
+                <tr class="text-center text-warning">
+                    <th>Nombre</th>
+                    <th>Clasificacion</th>
+                    <th>Designacion</th>
+                    <th>Lenguaje</th>
+                    <th>Altura media</th>
+                    <th>Promedio de vida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" ng-repeat="data in species">
+                    <td>{{data.name}}</td>
+                    <td>{{data.classification}}</td>
+                    <td>{{data.designation}}</td>
+                    <td>{{data.language}}</td>
+                    <td>{{data.average_height}} cm</td>
+                    <td>{{data.average_lifespan}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="row" ng-controller="logCtrl">
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+        <h4 class="text-secondary"><i class="fas fa-user" aria-hidden="true"></i>Información del Log de Star Wars</h4>
+        <hr/>
+    </div>
+
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Request</th>
+                    <th>Request API</th>
+                    <th>Response</th>
+                    <th>Response API</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in names | orderBy : 'timestamp'">
+                    <td>{{data.timestamp | date:'medium'}}</td>
+                    <td><code>{{data.request}}</code></td>
+                    <td>{{data.requestAPI}}</td>
+                    <td>
+                        <div style="overflow:auto;max-width: 250px;max-height: 200px;"> <code>{{data.response}}</code> </div>
+                    </td>
+                    <td>
+                        <div style="overflow:auto;max-width: 250px;max-height: 200px;"> <code>{{data.responseAPI}}</code> </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
